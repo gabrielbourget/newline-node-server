@@ -22,9 +22,9 @@ const getProduct = async (req, res, next) => {
   res.json(product);
 };
 
-const createProduct = (req, res, next) => {
-  console.log('request body: ', req.body);
-  res.json(req.body);
+const createProduct = async (req, res, next) => {
+  const product = await Products.create(req.body);
+  res.json(product);
 };
 
 const editProduct = async (req, res, next) => {
